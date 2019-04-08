@@ -1,0 +1,21 @@
+﻿<Window x:Class="YpeuEe.Times.WinShow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YpeuEe.Times"
+        mc:Ignorable="d"
+        WindowStyle="None" AllowsTransparency="True" ShowInTaskbar="True" WindowStartupLocation="CenterScreen" 
+        Title="WinShow" Height="350" Width="540">
+    <Grid>
+        <Image Source="Images/静心生慧.png" HorizontalAlignment="Left" Height="263" VerticalAlignment="Top" />
+        <Label Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="0,259,0,0" VerticalAlignment="Top" Height="36" Width="537"/>
+
+        <Button Content="心领神会" Click="Btn1_OnClick" HorizontalAlignment="Left" Margin="220,307,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
+        <Button Content="等一分钟" Click="Btn2_OnClick" HorizontalAlignment="Left" Margin="353,306,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
+        <Label   FontSize="25"  HorizontalAlignment="Left" Margin="482,22,0,0" VerticalAlignment="Top" Height="237" Width="32" Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}">
+            <TextBlock TextWrapping="Wrap" Text="工作忙也要喝茶" />
+        </Label>
+
+    </Grid>
+</Window>
