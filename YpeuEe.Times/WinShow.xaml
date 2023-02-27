@@ -9,7 +9,7 @@
         Title="WinShow" Height="350" Width="540">
     <Grid>
         <Image Source="Images/静心生慧.png" HorizontalAlignment="Left" Height="263" VerticalAlignment="Top" />
-        <Label Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="0,259,0,0" VerticalAlignment="Top" Height="36" Width="537"/>
+        <Label Name="lblMsg" Content="Label" HorizontalAlignment="Left" FontSize="18" Margin="0,259,0,0" VerticalAlignment="Top" Height="36" Width="537"/>
 
         <Button Content="心领神会" Click="BtnClose_OnClick" HorizontalAlignment="Left" Margin="220,307,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
         <Button Content="等10分钟" Click="BtnDelay_OnClick" HorizontalAlignment="Left" Margin="353,306,0,0" VerticalAlignment="Top" Width="100" Height="25"/>

@@ -50,7 +50,8 @@ namespace YpeuEe.Times
             if (task != null && (tempRunTask == null || !task.Equals(tempRunTask)))
             {
                 var winShow = new WinShow(task);
-                winShow.ShowDialog();
+             
+                winShow.Show();
                 tempRunTask = task;
             }
         }

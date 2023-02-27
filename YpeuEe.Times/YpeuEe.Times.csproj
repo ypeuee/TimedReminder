@@ -64,6 +64,7 @@
     </ApplicationDefinition>
     <Compile Include="NotifyIconManage.cs" />
     <Compile Include="SystemTool.cs" />
+    <Compile Include="WindowShow.cs" />
     <Compile Include="WindowTool.cs" />
     <Compile Include="WinRest.xaml.cs">
       <DependentUpon>WinRest.xaml</DependentUpon>
@@ -131,6 +132,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\SplashScreen1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\4kznds3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

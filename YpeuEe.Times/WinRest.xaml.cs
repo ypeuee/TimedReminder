@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace YpeuEe.Times
             InitializeComponent();
         }
 
-       
+
 
         public static void ShowRest()
         {
@@ -41,5 +42,19 @@ namespace YpeuEe.Times
         {
             Close();
         }
+
+        #region 快速捷
+        private void CommandBinding_ToolCapClick_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void CommandBinding_ToolCapClick_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            BtnClose_OnClick(sender, e);
+        }
+
+        #endregion
+            
     }
 }

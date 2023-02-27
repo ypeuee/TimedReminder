@@ -7,10 +7,30 @@
         mc:Ignorable="d"
          WindowStyle="None" AllowsTransparency="True" ShowInTaskbar="True" WindowStartupLocation="CenterScreen" 
         Title="WinShow" Height="550" Width="840" 
+        WindowState="Maximized"
         Closed="Window_Closed">
-    <Grid>
+    <!--资源中添加命令-->
+    <Window.Resources>
+        <RoutedUICommand x:Key="ToolCapClick" Text="截屏快捷键" />
+    </Window.Resources>
 
-        <Button Content="充能完毕" Click="BtnClose_OnClick"  HorizontalAlignment="Left" Margin="659,434,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
+    <!--输入命令绑定-->
+    <Window.InputBindings>
+        <KeyBinding Gesture="ESC" Command="{StaticResource ToolCapClick}"/>
+    </Window.InputBindings>
+
+    <!--命令执行方法绑定-->
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource ToolCapClick}"
+                    CanExecute="CommandBinding_ToolCapClick_CanExecute"
+                    Executed="CommandBinding_ToolCapClick_Executed"/>
+    </Window.CommandBindings>
+    <Grid>
+        <Image Source="/Images/4kznds3.jpg" Stretch="UniformToFill" />
+
+        <Button Content="充能完毕" Click="BtnClose_OnClick" Margin="0,0,59,56" HorizontalAlignment="Right" Width="100" Height="25" VerticalAlignment="Bottom">
+        
+        </Button>
 
     </Grid>
 </Window>

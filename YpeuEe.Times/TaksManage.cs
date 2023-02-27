@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,9 +38,14 @@ namespace YpeuEe.Times
         /// </summary>
         /// <param name="host"></param>
         /// <param name="minute"></param>
-        public static void CreateTask(int host=0,int minute=1)
+        public static void CreateTask(int host = 1, int minute = 0)
         {
-            _listTask.Add(new TaskM() { Name="休息一下",Time=DateTime.Now.AddHours(host).AddMinutes(minute)});
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                host = 0;
+                minute = 0;
+            }
+            _listTask.Add(new TaskM() { Name = "休息一下", Time = DateTime.Now.AddHours(host).AddMinutes(minute) });
 
         }
 
@@ -49,7 +55,7 @@ namespace YpeuEe.Times
         /// </summary>
         /// <param name="taskName"></param>
         /// <param name="minutes"></param>
-        public static void CreateTask(string taskName, int host, int minutes )
+        public static void CreateTask(string taskName, int host, int minutes)
         {
             var newTask = new TaskM()
             {
@@ -99,5 +105,10 @@ namespace YpeuEe.Times
         /// 是否临时 true临时 false 正常 默认false;
         /// </summary>
         public bool IsTemp { get; set; }
+
+        /// <summary>
+        /// 等待到计时（秒）
+        /// </summary>
+        public int Countdown { get; set; } = 60;
     }
 }
