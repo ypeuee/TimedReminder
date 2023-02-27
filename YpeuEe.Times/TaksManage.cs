@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Ink;
 
 namespace YpeuEe.Times
 {
@@ -20,33 +21,45 @@ namespace YpeuEe.Times
         {
 
             string date = DateTime.Now.Date.ToShortDateString();
-           // _listTask.Add(new TaskM() { Name = "13.25戒指22专场。  14000", Time = DateTime.Parse(date + " 14:25") });
 
+            // 13点一次，16点一次，19点一次
 
-            _listTask.Add(new TaskM() { Name = "13.25戒指专场。  14000", Time = DateTime.Parse(date + " 13:25") });
-            _listTask.Add(new TaskM() { Name = "15.15玉 件专场    3600", Time = DateTime.Parse(date + " 15:15") });
-            _listTask.Add(new TaskM() { Name = "15.45 小挂件      1300", Time = DateTime.Parse(date + " 15:45") });
-            _listTask.Add(new TaskM() { Name = "16.05戒指专      16000", Time = DateTime.Parse(date + " 16:05") });
-            _listTask.Add(new TaskM() { Name = "17.05鸡血玉专场   7620", Time = DateTime.Parse(date + " 17:05") });
+            //_listTask.Add(new TaskM() { Name = "发布系统了", Time = DateTime.Parse(date + " 13:00") });
+            //_listTask.Add(new TaskM() { Name = "发布系统了", Time = DateTime.Parse(date + " 16:00") });
+            //_listTask.Add(new TaskM() { Name = "发布系统了", Time = DateTime.Parse(date + " 19:00") });
+
+            CreateTask();
+        }
+
+        /// <summary>
+        /// 创建任务
+        /// 默认：1小时 0分钟
+        /// </summary>
+        /// <param name="host"></param>
+        /// <param name="minute"></param>
+        public static void CreateTask(int host=0,int minute=1)
+        {
+            _listTask.Add(new TaskM() { Name="休息一下",Time=DateTime.Now.AddHours(host).AddMinutes(minute)});
+
         }
 
 
         /// <summary>
         /// 添加临时任务
         /// </summary>
-        /// <param name="task"></param>
+        /// <param name="taskName"></param>
         /// <param name="minutes"></param>
-        public static void AddTemp(TaskM task, int minutes = 1)
+        public static void CreateTask(string taskName, int host, int minutes )
         {
             var newTask = new TaskM()
             {
-                Name = task.Name,
+                Name = taskName,
                 Time = DateTime.Now.AddMinutes(minutes),
-                IsTemp=true,
+                IsTemp = true,
             };
 
             ListTask.Add(newTask);
-           // ListTask.Insert(0,newTask);
+            // ListTask.Insert(0,newTask);
         }
 
         /// <summary>
@@ -54,7 +67,7 @@ namespace YpeuEe.Times
         /// </summary>
         /// <param name="minutes"></param>
         /// <returns></returns>
-        public static TaskM Find(int minutes = 2)
+        public static TaskM Find(int minutes = 0)
         {
             return ListTask.FirstOrDefault(m => Math.Ceiling((m.Time - DateTime.Now).TotalMinutes) == minutes);
         }
@@ -85,6 +98,6 @@ namespace YpeuEe.Times
         /// <summary>
         /// 是否临时 true临时 false 正常 默认false;
         /// </summary>
-        public  bool IsTemp { get; set; }
+        public bool IsTemp { get; set; }
     }
 }

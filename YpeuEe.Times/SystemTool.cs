@@ -187,11 +187,11 @@ namespace YpeuEe.Times
         /// <summary>
         /// 是否按管理员运行
         /// </summary>
-        public static bool NotAdmin
+        public static bool SetAdmin
         {
             get
             {
-                var con = ConfigurationManager.AppSettings["NotAdmin"];
+                var con = ConfigurationManager.AppSettings["SetAdmin"];
                 bool.TryParse(con, out _notAdmin);
                 return _notAdmin;
             }

@@ -15,30 +15,30 @@ using System.Windows.Shapes;
 namespace YpeuEe.Times
 {
     /// <summary>
-    /// WinShow.xaml 的交互逻辑
+    /// WinRest.xaml 的交互逻辑
     /// </summary>
-    public partial class WinShow : Window
+    public partial class WinRest : Window
     {
-        public WinShow(TaskM task)
+        public WinRest()
         {
             InitializeComponent();
-            this.Move();
-            Label1.Content = task.Name;
-            Task = task;
         }
 
-        public TaskM Task { get; set; }
+       
 
-        //心领神会
+        public static void ShowRest()
+        {
+            WinRest winRest = new WinRest();
+            winRest.ShowDialog();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            TaksManage.CreateTask();
+        }
+
         private void BtnClose_OnClick(object sender, RoutedEventArgs e)
         {
-            Close();
-            WinRest.ShowRest();
-        }
-        //等10分钟
-        private void BtnDelay_OnClick(object sender, RoutedEventArgs e)
-        {
-            TaksManage.CreateTask("延迟10分钟", 0, 1);
             Close();
         }
     }

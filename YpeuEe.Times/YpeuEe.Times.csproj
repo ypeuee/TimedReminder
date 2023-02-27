@@ -8,12 +8,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>YpeuEe.Times</RootNamespace>
     <AssemblyName>YpeuEe.Times</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +34,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\tea_128px.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -61,6 +65,9 @@
     <Compile Include="NotifyIconManage.cs" />
     <Compile Include="SystemTool.cs" />
     <Compile Include="WindowTool.cs" />
+    <Compile Include="WinRest.xaml.cs">
+      <DependentUpon>WinRest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinShow.xaml.cs">
       <DependentUpon>WinShow.xaml</DependentUpon>
     </Compile>
@@ -76,11 +83,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="TaksManage.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="WinRest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WinShow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -116,7 +127,10 @@
     <Resource Include="Images\静心生慧.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="tea_128px.ico" />
+    <Resource Include="Images\tea_128px.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\SplashScreen1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

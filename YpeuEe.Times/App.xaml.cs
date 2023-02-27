@@ -38,7 +38,7 @@ namespace YpeuEe.Times
             {
                 //为用户组指定对应目录的完全访问权限
                 //if (!MyClass.SetAccess("Users", System.Windows.Forms.Application.StartupPath))
-                if (!SystemTool.NotAdmin)
+                if (SystemTool.SetAdmin)
                     MyAdmin.SetAdmin();
 
                 //FineEx.Update.UpdateBase objUpdate = new FineEx.Update.UpdateBase();

@@ -11,8 +11,8 @@
         <Image Source="Images/静心生慧.png" HorizontalAlignment="Left" Height="263" VerticalAlignment="Top" />
         <Label Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="0,259,0,0" VerticalAlignment="Top" Height="36" Width="537"/>
 
-        <Button Content="心领神会" Click="Btn1_OnClick" HorizontalAlignment="Left" Margin="220,307,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
-        <Button Content="等一分钟" Click="Btn2_OnClick" HorizontalAlignment="Left" Margin="353,306,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
+        <Button Content="心领神会" Click="BtnClose_OnClick" HorizontalAlignment="Left" Margin="220,307,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
+        <Button Content="等10分钟" Click="BtnDelay_OnClick" HorizontalAlignment="Left" Margin="353,306,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
         <Label   FontSize="25"  HorizontalAlignment="Left" Margin="482,22,0,0" VerticalAlignment="Top" Height="237" Width="32" Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}">
             <TextBlock TextWrapping="Wrap" Text="工作忙也要喝茶" />
         </Label>

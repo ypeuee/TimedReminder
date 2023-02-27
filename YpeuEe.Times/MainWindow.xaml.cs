@@ -44,7 +44,7 @@ namespace YpeuEe.Times
         void dtimer_Tick(object sender, EventArgs e)
         {
             Label1.Content = DateTime.Now.ToString();
-            //提前2分钟
+            //查找到期任务
             var task = TaksManage.Find();
 
             if (task != null && (tempRunTask == null || !task.Equals(tempRunTask)))

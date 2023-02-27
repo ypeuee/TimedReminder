@@ -123,7 +123,7 @@ namespace YpeuEe.Times
                 if (MessageBox.Show("确定要关闭吗?", "退出", MessageBoxButton.YesNo, MessageBoxImage.Question,
                         MessageBoxResult.No) == MessageBoxResult.Yes)
                 {
-                    _notifyIcon.Visible = true;
+                    _notifyIcon.Visible = false;
                     SystemTool.Shutdown();
                 }
             };
