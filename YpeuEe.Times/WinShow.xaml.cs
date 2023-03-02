@@ -81,7 +81,7 @@ namespace YpeuEe.Times
         private void BtnDelay_OnClick(object sender, RoutedEventArgs e)
         {
             _dtimer.Stop();
-            TaksManage.CreateTask("延迟10分钟", 0, 1);
+            TaksManage.CreateTask("延迟10分钟", 0, 10);
 
             WindowShow.Close(this);
 

@@ -26,11 +26,13 @@
                     Executed="CommandBinding_ToolCapClick_Executed"/>
     </Window.CommandBindings>
     <Grid>
-        <Image Source="/Images/4kznds3.jpg" Stretch="UniformToFill" />
+        <Image x:Name="Img" Source="/Images/4kznds3.jpg" Stretch="UniformToFill" />
 
-        <Button Content="充能完毕" Click="BtnClose_OnClick" Margin="0,0,59,56" HorizontalAlignment="Right" Width="100" Height="25" VerticalAlignment="Bottom">
-        
-        </Button>
+        <Label Name="LblMsg" FontSize="50"  Foreground="White"  Content="05:00" HorizontalAlignment="Right" Width="200" Height="70"  Margin="0,0,159,56" VerticalAlignment="Bottom"/>
+
+        <Button Content="充能完毕" Click="BtnClose_OnClick" Margin="0,0,59,56" HorizontalAlignment="Right" Width="100" Height="25" VerticalAlignment="Bottom"/>
+
+
 
     </Grid>
 </Window>

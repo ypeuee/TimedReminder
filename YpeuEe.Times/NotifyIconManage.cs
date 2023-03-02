@@ -141,8 +141,8 @@ namespace YpeuEe.Times
         {
             _window.Visibility = Visibility.Collapsed;
             _window.WindowState = WindowState.Normal;
-            _notifyIcon.BalloonTipText = @"我在这里！";
-            _notifyIcon.ShowBalloonTip(2000);
+            //_notifyIcon.BalloonTipText = @"我在这里！";
+            //_notifyIcon.ShowBalloonTip(2000);
         }
 
     }
